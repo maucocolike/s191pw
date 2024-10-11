@@ -2,10 +2,15 @@
 
 use Illuminate\Support\Facades\Route;
 
-/* Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
-}); */
+});
+*/
 
-Route::view('/','welcome');
+Route::view('/','inicio')->name('inicio');
 
-Route::view('/formulario','formulario');
+Route::view('/formulario','formulario')->name('formu');
+
+Route::view('/consultar','clientes')->name('consulta');
+
+Route::view('/component','componentes')->name('rutacomponent');
