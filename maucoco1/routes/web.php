@@ -10,7 +10,9 @@ Route::get('/',[controladorVistas::class,'home'])->name('inicio');
 
 Route::get('/formulario',[controladorVistas::class,'insert'])->name('formu');
 
-Route::get('/consultar',[controladorVistas::class,'select'])->name('consulta'); 
+Route::get('/consultar',[controladorVistas::class,'select'])->name('consulta');
+
+Route::post('/enviarCliente',[controladorVistas::class,'procesaCliente'])->name('rutaenvia');
 
 
 

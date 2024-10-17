@@ -21,5 +21,12 @@ class controladorVistas extends Controller
         return view('clientes');
     }
 
+    public function procesaCliente(Request $peticion){
+        
+        //return 'la info del cliente llego al controlador';
+
+        return $peticion->all();
+    }
+
 
 }
