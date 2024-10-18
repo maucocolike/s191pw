@@ -55,7 +55,7 @@
             <h4>Grupo: S191</h4>
 
             <!-- Botón estilizado (opcional) -->
-            <a href="#" class="btn btn-custom">Ir al contenido</a>
+            <a href="{{ route('repaso1') }}" class="btn btn-custom">Ir al contenido</a>
         </div>
     </div>
 
