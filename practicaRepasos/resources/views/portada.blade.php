@@ -3,15 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    @vite(['resources/js/app.js'])
     <title>Portada de Inicio</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     
-    <!-- Custom Styles -->
     <style>
         body {
-            background-color: #f4f4f9;
+            background-color: #2c3e50;
         }
         .portada {
             display: flex;
@@ -39,27 +36,24 @@
             transition: background-color 0.3s ease;
         }
         .btn-custom:hover {
-            background-color: #0056b3;
+            background-color: #2c3e50;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="portada text-center">
-            <!-- Logo -->
             <img src="{{ asset ('images/LOGO UNIV.png') }}" alt="Logo UPQ" class="logo">
 
-            <!-- Nombre del estudiante y universidad -->
+
             <h1>Mauricio Alemán Sosa</h1>
             <h3>Universidad Politécnica de Querétaro</h3>
             <h4>Grupo: S191</h4>
 
-            <!-- Botón estilizado (opcional) -->
+ 
             <a href="{{ route('repaso1') }}" class="btn btn-custom">Ir al contenido</a>
         </div>
     </div>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
