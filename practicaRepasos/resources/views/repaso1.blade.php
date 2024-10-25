@@ -84,7 +84,7 @@
             </div>
             <div class="mb-4">
                 <label for="gb" class="form-label">Ingresa GB:</label>
-                <input type="number" name="gb" id="gb" class="form-control" placeholder="Ejemplo: 1">
+                <input type="number" name="gb_to_mb" id="gb" class="form-control" placeholder="Ejemplo: 1">
             </div>
             <button type="submit" class="btn btn-custom">Convertir</button>
         </form>
