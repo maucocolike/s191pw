@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Confirmación Correo</title>
+    <title>Confirmación Telefono</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -66,12 +66,12 @@
 </head>
 <body>
     <div class="container">
-    @csrf
+        @csrf
         <h2>Confirma tu identidad</h2>
-        <p>Escriba el código que enviamos a (nombre)@gmail.com</p>
+        <p>Escriba el código que enviamos a ********42</p>
         <input type="text" placeholder="Código de verificación">
         <button class="btn-recover">Recuperar</button>
-        <a href="{{ route('confirmacion.telefono') }}" class="link">Prueba con tu número de teléfono</a>
+        <a href="{{ route('mostrarinicio') }}" class="link">Prueba con tu Correo electronico</a>
     </div>
 </body>
 </html>

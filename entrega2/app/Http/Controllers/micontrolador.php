@@ -6,9 +6,14 @@ use Illuminate\Http\Request;
 
 class micontrolador extends Controller
 {
+    public function mostrarInicio()
+    {
+        return view('confirmacion-identidad');
+    }
+
     public function confirmarTelefono()
     {
-        // Aquí puedes cargar una vista o procesar la solicitud
-        return view('confirmacion-telefono'); // Asegúrate de que esta vista existe en resources/views
+        return view('confirmacion-telefono');
     }
 }
+
