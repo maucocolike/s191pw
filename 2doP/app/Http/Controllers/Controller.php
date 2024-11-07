@@ -1,11 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Http\Request;
+use App\Http\Requests\FormRequest;
 
 abstract class Controller
 {
     public function FormRequest(Request $peticion){
-        return $peticion->all();
+        
 
         $validacion= $peticion->validate([
             'TxtCorreo'=> 'required|email',

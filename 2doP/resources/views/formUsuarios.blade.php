@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Examen 2do Parcial</title>
     @vite(['resources/app.js'])
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
 
@@ -13,7 +14,24 @@
 
     <div class="container  col-md-4">
 
-    <form>
+@if(session('exito'))
+<x-Alert tipo="success">{{session('exito')}}</x-Alert>
+@endif
+
+@session('exito')
+    <x-Alert tipo="warning"> {{$value}} </x-Alert>
+@endsession
+
+@session('exito')
+  <script>
+    Swal.fire({
+  title: "Respuesta del servidor",
+  text: '{{ $value }}',
+  icon: "success" });
+  </script>
+@endsession
+
+    <form method="POST" action="enviarCliente">
 
         <div class="mb-3">
             <label  class="form-label">Correo: </label>
