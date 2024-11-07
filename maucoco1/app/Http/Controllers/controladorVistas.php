@@ -11,7 +11,7 @@ class controladorVistas extends Controller
         //inicio
         return view('inicio');
     }
-
+    
     public function insert(){
         //formulario
         return view('formulario');

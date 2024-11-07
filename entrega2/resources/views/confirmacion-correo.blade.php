@@ -84,7 +84,6 @@
         <!-- Link para reenviar el correo -->
         <a href="#" class="link">Click aquí para reenviar correo</a>
     </div>
-
     <!-- Incluye Bootstrap JS y Popper (opcional para funcionalidades adicionales) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
