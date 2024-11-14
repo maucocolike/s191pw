@@ -18,3 +18,7 @@ Route::get('/lista-habitaciones', function () {
 Route::get('/detalle-habitacion', function () {
     return view('detalle-habitacion');
 })->name('detalle-habitacion');
+
+Route::get('/vuelos', function () {
+    return view('vuelos');
+});

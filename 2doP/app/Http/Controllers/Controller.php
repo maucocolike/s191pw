@@ -6,18 +6,19 @@ use App\Http\Requests\FormRequest;
 
 abstract class Controller
 {
-    public function FormRequest(Request $peticion){
         
+    Route::get('/', function () {
+        return view('formUsuarios');
+    });
 
-        $validacion= $peticion->validate([
-            'TxtCorreo'=> 'required|email',
-            'TxtContra'=> 'required',
-            'TxtEdad'=> 'required|min:1|max:2'
-        ]);
-        
-        $usuario= $peticion->input('TxtCorreo');
+    $usuario= $peticion->input('txtnombre');
         session()->flash('exito','Se guardo el usuario: '.$usuario);
-        return to_route('formUsuarios')
-    }
+
+        return to_route('formu');
+    
+        public function procesaCliente(validadorCliente $peticion){
+            
+        }
 }
+
 
