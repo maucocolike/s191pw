@@ -25,7 +25,10 @@ class controladorVistas extends Controller
     public function procesaCliente(validadorCliente $peticion){
         //return 'la info del cliente llego al controlador';
 
-        
+        $usuario= $peticion->input('txtnombre');
+        session()->flash('exito','Se guardo el usuario: '.$usuario);
+
+        return to_route('formu');
     }
 
 
