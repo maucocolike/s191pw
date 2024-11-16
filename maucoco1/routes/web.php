@@ -8,18 +8,15 @@ use App\Http\Controllers\clienteController;
 //nuevas rutas de tipo get/igual van a tener sobrenombres
 // en los controladores ponemos los 
 
-Route::get('/',[controladorVistas::class,'home'])->name('inicio');
-
-Route::get('/consultar',[controladorVistas::class,'select'])->name('consulta');
-
-Route::post('/enviarCliente',[controladorVistas::class,'procesaCliente'])->name('rutaenvia');
-
-
 /* rutas para trabajar con clientecontroller*/
 
 Route::get('/cliente/create',[clienteController::class,'create'])->name('formu');
 
+Route::post('/cliente',[clienteController::class,'store'])->name('rutaenvia');
 
+Route::get('/',[clienteController::class,'home'])->name('inicio');
+
+Route::get('/cliente',[clienteController::class,'index'])->name('consulta');
 
 /*Route::get('/', function () {
     return view('welcome');

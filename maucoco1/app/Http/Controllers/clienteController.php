@@ -9,12 +9,19 @@ use App\Http\Requests\validadorCliente;
 
 class clienteController extends Controller
 {
+
+    public function home(){
+        //inicio
+        return view('inicio');
+    }
+
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        $consultarClientes=DB::table('cliente')-> get();
+        return view('clientes', compact('consultarClientes'));
     }
 
     /**
