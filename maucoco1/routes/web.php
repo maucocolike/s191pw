@@ -18,6 +18,12 @@ Route::get('/',[clienteController::class,'home'])->name('inicio');
 
 Route::get('/cliente',[clienteController::class,'index'])->name('consulta');
 
+Route::delete('/clientes/{id}', [ClienteController::class, 'destroy'])->name('clientes.destroy');
+
+Route::get('/clientes/{id}/edit', [ClienteController::class, 'edit'])->name('edit'); 
+
+Route::put('/clientes/{id}', [ClienteController::class, 'update'])->name('actualizar');
+
 /*Route::get('/', function () {
     return view('welcome');
 });

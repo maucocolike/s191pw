@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 use App\Http\Requests\validadorCliente;
+use App\Models\Cliente;
+
 
 class clienteController extends Controller
 {
@@ -68,7 +70,8 @@ class clienteController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $cliente = Cliente::findOrFail($id);
+        return view('edit', compact('cliente'));
     }
 
     /**
@@ -76,7 +79,17 @@ class clienteController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'nombre' => 'required|string|max:255',
+            'correo' => 'required|email|max:255',
+            'telefono' => 'required|string|max:15',
+        ]);
+
+        $cliente = Cliente::findOrFail($id);
+        $cliente->update($request->all());
+
+        return to_route('consulta')->with('exito', 'Cliente actualizado con éxito');
+    
     }
 
     /**
@@ -84,6 +97,11 @@ class clienteController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        // Método para eliminar un cliente
+        $cliente = Cliente::findOrFail($id);
+        $cliente->delete();
+
+        return redirect()->back()->with('exito', 'Cliente eliminado con éxito');
+    
     }
 }
