@@ -1,9 +1,6 @@
-
-
-  
   <!-- Modal Actualizar -->
   
-  <div class="modal fade" id=""  data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal fade" id="update{{$cliente->id}}"  data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content fw-bold">
         
@@ -14,10 +11,10 @@
 
         <div class="modal-body text-primary">
 
-            <form method="POST" action="">
+            <form method="POST" action="{{route('cliente.update',$cliente->id)}}">
                 
                 @csrf 
-                @method() 
+                @method('PUT') 
                 
                 <div class="mb-3">
                   <label  class="form-label">Nombre: </label>
@@ -58,7 +55,7 @@
   
   <!-- Modal Para Eliminar  -->
 
-  <div class="modal fade" id=""  data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal fade" id="destroy{{$cliente->id}}"  data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         
@@ -69,9 +66,9 @@
 
         <div class="modal-body">
 
-            <form method="POST" action="">
+            <form method="POST" action="{{route('cliente.destroy')$cliente->id}}">
                 @csrf 
-                @method('')   
+                @method('DELETE')   
                 <div class="text-danger fs-4 fw-semibold">
                   ¿Seguro que borraras al cliente   ?
                 </div>           
@@ -95,16 +92,3 @@
 
   <!-- disparadores para la vista Clientes -->
 
-  <div class="btn-group" role="group">
-            <button type="button" class="btn btn-outline-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                <i class="bi bi-list-stars"></i> Opciones
-            </button>
-            <ul class="dropdown-menu">
-                <button type="button" class="btn btn-warning m-1" data-bs-toggle="modal" data-bs-target="#update{{$cliente->id}}">
-                    <i class="bi bi-pencil-square"></i>Editar 
-                  </button>
-                <button type="button" class="btn btn-danger m-1" data-bs-toggle="modal" data-bs-target="#destroy{{$cliente->id}}">
-                    <i class="bi bi-trash"></i> Borrar 
-                  </button>
-            </ul>
-          </div> 
