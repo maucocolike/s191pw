@@ -22,7 +22,8 @@ class ClienteController extends Controller
      */
     public function index()
     {
-        //
+        $consulta= cliente::all();
+        return view('clientes',compact('consulta'));
     }
 
     /**
@@ -38,7 +39,18 @@ class ClienteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $addCliente= new cliente();
+
+        $addCliente->nombre= $request->input('txtnombre');
+        $addCliente->apellido= $request->input('txtapellido');
+        $addCliente->correo= $request->input('txtcorreo');
+        $addCliente->telefono= $request->input('txttelefono');
+
+        $addCliente->save();
+
+        $usuario= $request->input('txtnombre');
+        session()->flash('exito','Se guardo el usuario: '.$usuario);
+        return redirect()->back();
     }
 
     /**
