@@ -9,23 +9,22 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
+    public function up()
     {
         Schema::create('clientes', function (Blueprint $table) {
-            $table->id();
-            $table->string('nombre',149);
-            $table->string('apellido');
-            $table->string('correo');
-            $table->string('telefono',20);
-            $table->timestamps();
+            $table->id(); // Clave primaria
+            $table->string('nombre'); // Columna para el nombre del cliente
+            $table->string('email')->unique(); // Columna para el email
+            $table->timestamps(); // Columnas created_at y updated_at
         });
+    }
+
+    public function down()
+    {
+        Schema::dropIfExists('clientes');
     }
 
     /**
      * Reverse the migrations.
      */
-    public function down(): void
-    {
-        Schema::dropIfExists('clientes');
-    }
 };

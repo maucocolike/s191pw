@@ -39,9 +39,9 @@
             </ul>
           </div> 
     </div>
-
+    @include('options');
   </div>
-  include('options');
+  
   
   @endforeach
 </div>

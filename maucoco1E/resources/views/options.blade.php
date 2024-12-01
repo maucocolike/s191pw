@@ -66,7 +66,7 @@
 
         <div class="modal-body">
 
-            <form method="POST" action="{{route('cliente.destroy')$cliente->id}}">
+            <form method="POST" action="{{route('cliente.destroy',$cliente->id)}}">
                 @csrf 
                 @method('DELETE')   
                 <div class="text-danger fs-4 fw-semibold">
