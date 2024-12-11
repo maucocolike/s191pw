@@ -27,4 +27,12 @@ class FormRequest extends FormRequest
             'TxtEdad'=> 'required|min:1|max:2'
         ];
     }
+
+    public function guardarUsuario (UsuarioRequest $request){
+        $datos = $request ->validated();
+
+        Usuarios::create($datos);
+
+        return response()->json(['mensaje','usuario guardado con exito']);
+    }
 }

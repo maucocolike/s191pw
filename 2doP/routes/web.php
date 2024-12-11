@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UsuarioController;
 
 
 
-Route::post('/',[Controller::class,'FormRequest'])->name('FormRequest');
+Route::get('/',[UsuarioController::class,'mostrarFormulario'])->name('mostrar');
+Route::post('/guardar',[UsuarioController::class,'guardarUsuario'])->name('guardar_usuario');

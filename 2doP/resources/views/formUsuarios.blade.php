@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Examen 2do Parcial</title>
     @vite(['resources/app.js'])
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
 <body>
 
@@ -22,17 +23,20 @@
     <x-Alert tipo="warning"> {{$value}} </x-Alert>
 @endsession
 
-@session('exito')
-  <script>
-    Swal.fire({
-  title: "Respuesta del servidor",
-  text: '{{ $value }}',
-  icon: "success" });
-  </script>
-@endsession
 
-    <form method="POST" action="enviarCliente">
+<script>
+    @if(session('mensaje'))
+        Swal.fire({
+            icon: 'success',
+            title: '¡Éxito!',
+            text: '{{ session('mensaje') }}'
+        });
+    @endif
+</script>
 
+
+    <form method="POST" action="{{route('guardar_usuario') }}">
+    @csrf
         <div class="mb-3">
             <label  class="form-label">Correo: </label>
             <input type="text" class="form-control" name="TxtCorreo" >
